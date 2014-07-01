@@ -67,6 +67,7 @@ footer {
 }
 #firstSection {
 	height: 95%;
+    min-height: 560px;
 	overflow:hidden;
 }
 #showcaseSection {
