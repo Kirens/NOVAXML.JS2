@@ -13,83 +13,73 @@
 // The CSS used here is also very important since it sets up the CSS for the text layer divs overlays that
 // you actually end up selecting.
 
-window.onload = function () {
-  if (typeof PDFJS === 'undefined') {
-    alert('Built version of pdf.js is not found\nPlease run `node make generic`');
-    return;
-  }
-
-  var scale = 1.5; //Set this to whatever you want. This is basically the "zoom" factor for the PDF.
-  PDFJS.workerSrc = '../../build/generic/build/pdf.worker.js';
-
-  function loadPdf(pdfPath) {
-    var pdf = PDFJS.getDocument(pdfPath);
-    pdf.then(renderPdf);
-  }
-
-  function renderPdf(pdf) {
-    pdf.getPage(1).then(renderPage);
-  }
-
-  function renderPage(page) {
-    var viewport = page.getViewport(scale);
-    var canvas = document.createElement("canvas");
-
-    // Set the canvas height and width to the height and width of the viewport
-    //var canvas = $canvas.get(0);
-    var context = canvas.getContext("2d");
-
-    // The following few lines of code set up scaling on the context if we are on a HiDPI display
-    var outputScale = getOutputScale(context);
-    canvas.width = (Math.floor(viewport.width) * outputScale.sx) | 0;
-    canvas.height = (Math.floor(viewport.height) * outputScale.sy) | 0;
-    canvas.style.width = Math.floor(viewport.width) + 'px';
-    canvas.style.height = Math.floor(viewport.height) + 'px';
-
-    // Append the canvas to the pdf container div
-    var $pdfContainer = document.getElementById("pdfContainer");
-      $pdfContainer.height = canvas.style.height;
-      $pdfContainer.width = canvas.style.width;
-    //$pdfContainer.css("height", canvas.style.height)
-    //             .css("width", canvas.style.width);
-    //$pdfContainer.append($canvas);
-      $pdfContainer.appendChild(canvas);
-
-    //var canvasOffset = $canvas.offset();
-    var $textLayerDiv = document.createElement("div");
-    $textLayerDiv.className = "textLayer";
-    $textLayerDiv.height = canvas.style.height;
-    $textLayerDiv.width = canvas.style.width;
-    /*  .offset({
-        top: canvasOffset.top,
-        left: canvasOffset.left
-      });*/
-
-    context._scaleX = outputScale.sx;
-    context._scaleY = outputScale.sy;
-    if (outputScale.scaled) {
-      context.scale(outputScale.sx, outputScale.sy);
+window.onload = function() {
+    if (typeof PDFJS === 'undefined') {
+        alert('Built version of pdf.js is not found\nPlease run `node make generic`');
+        return;
     }
 
-    $pdfContainer.appendChild($textLayerDiv);
+    var scale = 1.5; //Set this to whatever you want. This is basically the "zoom" factor for the PDF.
+    PDFJS.workerSrc = '../../build/generic/build/pdf.worker.js';
 
-    page.getTextContent().then(function (textContent) {
-      var textLayer = new TextLayerBuilder({
-        textLayerDiv: $textLayerDiv,
-        viewport: viewport,
-        pageIndex: 0
-      });
-      textLayer.setTextContent(textContent);
+    function loadPdf(pdfPath) {
+        var pdf = PDFJS.getDocument(pdfPath);
+        pdf.then(renderPdf);
+    }
 
-      var renderContext = {
-        canvasContext: context,
-        viewport: viewport
-      };
+    function renderPdf(pdf) {
+        pdf.getPage(1).then(renderPage);
+    }
 
-      page.render(renderContext);
-    });
-  }
+    function renderPage(page) {
+        var viewport = page.getViewport(scale);
+        var canvas = document.createElement("canvas");
 
-  loadPdf('Schedule.pdf');
+        // Set the canvas height and width to the height and width of the viewport
+        var context = canvas.getContext("2d");
+
+        // The following few lines of code set up scaling on the context if we are on a HiDPI display
+        var outputScale = getOutputScale(context);
+        canvas.width = (Math.floor(viewport.width) * outputScale.sx) | 0;
+        canvas.height = (Math.floor(viewport.height) * outputScale.sy) | 0;
+        canvas.style.width = Math.floor(viewport.width) + 'px';
+        canvas.style.height = Math.floor(viewport.height) + 'px';
+
+        // Append the canvas to the pdf container div
+        var $pdfContainer = document.getElementById("pdfContainer");
+        $pdfContainer.height = canvas.style.height;
+        $pdfContainer.width = canvas.style.width;
+        $pdfContainer.appendChild(canvas);
+
+        var $textLayerDiv = document.createElement("div");
+        $textLayerDiv.className = "textLayer";
+        $textLayerDiv.height = canvas.style.height;
+        $textLayerDiv.width = canvas.style.width;
+
+        context._scaleX = outputScale.sx;
+        context._scaleY = outputScale.sy;
+        if (outputScale.scaled) {
+            context.scale(outputScale.sx, outputScale.sy);
+        }
+
+        $pdfContainer.appendChild($textLayerDiv);
+
+        page.getTextContent().then(function(textContent) {
+            var textLayer = new TextLayerBuilder({
+                textLayerDiv: $textLayerDiv,
+                viewport: viewport,
+                pageIndex: 0
+            });
+            textLayer.setTextContent(textContent);
+
+            var renderContext = {
+                canvasContext: context,
+                viewport: viewport
+            };
+
+            page.render(renderContext);
+        });
+    }
+
+    loadPdf('Schedule.pdf');
 };
-
