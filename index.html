@@ -6,173 +6,96 @@
 		<link href="css/minimal.css" rel="stylesheet" media="screen" />
 		<link href="css/style.css" rel="stylesheet" />
 		<meta charset="utf-8">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 	</head>
 	<body>
-		<!--TODO: add advanced controllers; specific weeks, choose school, download type (file-format)-->
+        <header class="panel">
+            <h1>
+                NOVAXML.JS
+            </h1>
+            <span>
+                Trött på fula schemaappar? Den här sidan erbjuder ett skript som analyserar ditt schema och genererar en fil din telefon kan läsa av. <br />
+            </span>
+        </header>
 		<section id="firstSection">
-			<header class="panel">
-				<h1>
-					NOVAXML.JS
-				</h1>
-				<span>
-					Trött på fula schemaappar? Den här sidan erbjuder ett skript som analyserar ditt schema och genererar en fil din telefon kan läsa av. <br />
-				</span>
-				<div id="controls">
-					<form onsubmit='NOVA.startNova()' id="input_form">
-						<input type="text" placeholder="Personnummer" id="userId">
-						<select id="periodList">
-							<option value="Ht">Höstterminen</option>
-							<option value="Vt">Vårterminen</option>  
-						</select>
-						<input type="button" id="submitBtn" value="generera sig!">
-					</form>
-				</div>
-			</header>
+            <div id="controls">
+                <form onsubmit='NOVA.startNova()' id="input_form">
+                    <input type="text" placeholder="Personnummer" id="userId">
+                    <select id="periodList">
+                        <option value="Ht">Höstterminen</option>
+                        <option value="Vt">Vårterminen</option>  
+                    </select>
+                    <input type="button" id="submitBtn" value="Generera sig!">
+                </form>
+            </div>
         
 			<div id="pdfContainer" class = "pdf-content">
 			</div>
 		</section>
 		<section id="showcaseSection">
-			<div>
-				<h2>
-					FAQ:
-				</h2>
-				<h3>
-					Q: Varför frågar ni om personnummer? Jag vill helst inte dela med mig av sånt.
-				</h3>
-				<p>
-<!---->				<!---Should this be bold?--->
-					<!--strong-->A:<!--/strong--> För att läsa av schemat behöver vi scheman som inte innehåller överlappande lektioner. Ett exempel på en överlappande lektioner kan vara individuella val, där en hel klass kan ha olika lektioner samtidigt. För att förhindra detta genererar vi ett personligt schema. Om du inte vill skriva in ditt personnummer så behöver du inte, men räkna inte med att få ett xml-schema då.
-				</p>
-				
-				<h3>
-					Q: Sparar ni personnummrerna någonstans, säljer de vidare eller gör något annat ondskefullt?
-				</h3>
-				<p>
-<!---->				<!---Should this be bold?--->
-					<!--strong-->A:<!--/strong--> Det enda sättet att verkligen bevisa att att vi inte gör detta är att ta sig en titt i källkoden. 
-					Hela den här sidan är publicerad på github (kolla längst ner på sidan för en länk). 
-					Om du inte kan läsa kod så får du helt enkelt lite på oss när vi säger att vi inte sparar/säljer/gör 
-					ondskefulla saker med det du skriver in. 
-				</p>
-				<p>
-					Vi tycker att vår kod är så bra och godhjärtad att vi vill skryta om den för hela världen. Därför finns allt publicerat på github. 
-				</p>
-			</div>
+            <h2>
+                FAQ:
+            </h2>
+            <h3>
+                Q: Varför frågar ni om personnummer? Jag vill helst inte dela med mig av sånt.
+            </h3>
+            <p>
+                A: För att läsa av schemat behöver vi scheman som inte innehåller överlappande lektioner. Ett exempel på en överlappande lektioner kan vara individuella val, där en hel klass kan ha olika lektioner samtidigt. För att förhindra detta genererar vi ett personligt schema. Om du inte vill skriva in ditt personnummer så behöver du inte, men räkna inte med att få ett xml-schema då.
+            </p>
+
+            <h3>
+                Q: Sparar ni personnummrerna någonstans, säljer de vidare eller gör något annat ondskefullt?
+            </h3>
+            <p>
+                A: Det enda sättet att verkligen bevisa att att vi inte gör detta är att ta sig en titt i källkoden. 
+                Hela den här sidan är publicerad på github (kolla längst ner på sidan för en länk). 
+                Om du inte kan läsa kod så får du helt enkelt lite på oss när vi säger att vi inte sparar/säljer/gör 
+                ondskefulla saker med det du skriver in. 
+            </p>
+            <p>
+                Vi tycker att vår kod är så bra och godhjärtad att vi vill skryta om den för hela världen. Därför finns allt publicerat på github. 
+            </p>
 		</section>
-        <footer>
-			<div id="staticSkript">
-				Skript som sidan använder sig av:<br />
-                <ul>
-					<li><i><a href="https://mozilla.github.io/pdf.js/">PDF.js</a></i> utvecklad av Mozilla</li>
-					<li><i><a href="https://github.com/mozilla/pdf.js/wiki/Minimal-example-that-showcases-PDF-rendering-with-text-selection-enabled">textlayerbuilder.js och minimal.js</a></i> utvecklad pdf.js kontribuerare.</li>
-					<li><i><a href="https://github.com/akaProxy/NOVAXML.JS/blob/master/phpProxy.php">novaProxy.php</a></i> utvecklad av <a href="https://plus.google.com/100416451900540672233">Erik</a></li>
-					<!--li><i><a href="http://github.com">AutoClearInput.js</a></i> utvecklad av <a href="https://plus.google.com/+JohnDaniel">John Daniel</a></li-->
+        <footer id="staticSkript">
+            Skript som sidan använder sig av:<br />
+            <ul>
+                <li><i><a href="https://mozilla.github.io/pdf.js/">PDF.js</a></i> utvecklad av Mozilla</li>
+                <li><i><a href="https://github.com/mozilla/pdf.js/wiki/Minimal-example-that-showcases-PDF-rendering-with-text-selection-enabled">textlayerbuilder.js och minimal.js</a></i> utvecklad pdf.js kontribuerare.</li>
+                <li><i><a href="https://github.com/akaProxy/NOVAXML.JS/blob/master/phpProxy.php">novaProxy.php</a></i> utvecklad av <a href="https://plus.google.com/100416451900540672233">Erik</a></li>
 <!---->				<li>Week number by RobG <i><a href="http://stackoverflow.com/questions/6117814/get-week-of-year-in-javascript-like-in-php">stackoverflow.com/questions/6117814/get-week-of-year-in-javascript-like-in-php</a></i></li>
-					<li><i>Novasoftware Analyserare</i> (den här sidan) utvecklad av <a href="https://plus.google.com/+JohnDaniel">John Daniel</a> och <a href="https://plus.google.com/100416451900540672233">Erik</a> med extra hjälp och stöd av alla medlemmar i <a href="https://plus.google.com/communities/107156505224869664027">aka. Proxy</a></li>
-					<li><i><a href="http://www.stevenbonner.com/projects/langdon/">Langdon Font</a></i> utvecklad av Steven Bonner</li>
-				</ul>
-			</div>
+                <li><i>Novasoftware Analyserare</i> (den här sidan) utvecklad av <a href="https://plus.google.com/+JohnDaniel">John Daniel</a> och <a href="https://plus.google.com/100416451900540672233">Erik</a> med extra hjälp och stöd av alla medlemmar i <a href="https://plus.google.com/communities/107156505224869664027">aka. Proxy</a></li>
+                <li><i><a href="http://www.stevenbonner.com/projects/langdon/">Langdon Font</a></i> utvecklad av Steven Bonner</li>
+            </ul>
 		</footer>
 		
-		
-		<!-- you will need to run "node make generic" first before you can use this -->
-        <script src="js/pdfjs/pdf.js"></script>
-
-        <!-- These files are viewer components that you will need to get text-selection to work -->
-        <!--<script src="../../web/ui_utils.js"></script>
-        <script src="../../web/text_layer_builder.js"></script>-->
-        <script src="js/pdfjs/ui_utils.js" type="text/javascript"></script>
-        <script src="js/pdfjs/text-layer_builder.js" type="text/javascript"></script> 
-        <!--<script src="js/ui_utils.js" type="text/javascript"></script>
-        <script src="js/text-layer_builder.js" type="text/javascript"></script>-->
+		<script src="js/pdfjs/pdf.js"></script>
         <script src="js/NOVAXML.js" type="text/javascript"></script>
-        <!--<script src="js/NOVAXML.js" type="text/javascript"></script>
 		<script src="js/demo.js" type="text/javascript"></script>
-		<!--script src="js/AutoClearInput.js" type="text/javascript"></script-->
-		<script type="text/javascript">
-			/* Decisions to be made:
-			/*   Wait vs. Progress
-			/*
-			/* TODO's:
-			/*   Add more schools and Create working script
-			/*   Add compatibility for other browsers
-			/*   Functionality to pair devices for data-transfer
-					(through websocket? http://www.html5rocks.com/en/tutorials/websockets/basics/)
-			/*   Convert data to file-download
-			/*   Find cause of Some days not being registered
-			*/
-            //Constants
-            var SCHOOLS_N_IDS = [
-                "Blackebergs Gymnasium", 52550, 
-                "Kungsholmens Gymnasium", 29200,
-                "Norra Real", 81530, 
-                "Östra Real", 59150
-            ], //Every school has a different value. For example, Blackebergs Gymnasium has the id 52550
-                errorFunction = function (error){
-                    document.body.style.cursor="default";
-				    if(error=='InvalidPDFException'){
-					   alert('Wrong data: Could not load PDF'
-                            + "\n"
-                            + "Se till så att du inte har skrivit in fel skola eller id.");
-				    }
-				    else{
-					   alert(error + "\n"
-                            + "Se till så att du inte har skrivit in fel skola eller id.")
-				    }
-				    throw{ name: error, message: 'Something went badly wrong' };
-                    
-			     },
-                SCHOOLS_SELECT_ID = "schools_select_id"; 
-            
-            //Functions
-            setUpSchoolList = function(conArray, parent, insertBefore){
-                //Insert a list in the form (parent) and before the select of periods
-
-                //Insert options into a select. 
-                
-                //Create select
-                var selectSchool = document.createElement("select");
-                selectSchool.id = SCHOOLS_SELECT_ID;
-                //Create options and insert them into select
-                for (var i=0; i<(conArray.length); i=i+2){
-                    //Create option
-                    var option = document.createElement("option");
-                    option.innerHTML =  conArray[i];
-                    option.value = conArray[i+1];
-                    
-                    //Insert option into select
-                    selectSchool.appendChild(option);
-                }
-                //insert select into DOM.
-                parent.insertBefore(selectSchool, insertBefore);
-                
-            }
-			gitForkMeMedia = {baseUri:'https://s3.amazonaws.com/github/ribbons/forkme_',
-									pos:{right:'right_',left:'left_'},
-									color:{white:'white_ffffff.png',
-										gray:'gray_6d6d6d.png',
-										darkblue:'darkblue_121621.png',
-										red:'red_aa0000.png',
-										green:'green_007200.png',
-										orange:'orange_ff7600.png'},
-									link:'https://github.com/akaProxy/NOVAXML.JS'
-								};
-			randProp = function(obj){
-				var result;
-				var count = 0;
-				for (var prop in obj)
-					if (Math.random() < 1/++count)
-						result = prop;
-				return result;
-			}
+		
+        <script type="text/javascript">
 			addForkMe = function(color,pos,size,parent){
+                var gitForkMeMedia = {baseUri:'https://s3.amazonaws.com/github/ribbons/forkme_',
+                                      pos:{right:'right_',left:'left_'},
+                                      color:{white:'white_ffffff.png',
+                                             gray:'gray_6d6d6d.png',
+                                             darkblue:'darkblue_121621.png',
+                                             red:'red_aa0000.png',
+                                             green:'green_007200.png',
+                                             orange:'orange_ff7600.png'},
+                                      link:'https://github.com/akaProxy/NOVAXML.JS',
+                                      randProp: function(obj){
+                                          var result;
+                                          var count = 0;
+                                          for (var prop in obj)
+                                              if (Math.random() < 1/++count)
+                                                  result = prop;
+                                          return result;
+                                      }
+                                     };
 				obj = gitForkMeMedia;
 				if(!parent)
 					parent=document.body;
 				if(!color || color=='random')
-					color = randProp(obj.color);
+					color = gitForkMeMedia.randProp(obj.color);
 				if(pos=='random')
 					pos = (Math.random()<0.5)?'left':'right';
 				else if(pos!='right')
@@ -209,9 +132,7 @@
 				
 				gitA.style[pos] = '0%'
 				parent.appendChild(gitA);
-			}
-            
-            //Actual process.
+			};
             //Add 'fork me' button top right. 
 			addForkMe('random','right');
 		</script>
