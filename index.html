@@ -8,30 +8,31 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-        <header class="panel">
+        <header>
             <h1>
                 NOVAXML.JS
             </h1>
-            <span>
-                Trött på fula schemaappar? Den här sidan erbjuder ett skript som analyserar ditt schema och genererar en fil din telefon kan läsa av. <br />
-            </span>
+            <p>
+                Trött på fula schemaappar? Den här sidan erbjuder ett skript som analyserar ditt schema och genererar en fil din telefon kan läsa av.
+            </p>
         </header>
-		<section id="firstSection">
-            <div id="controls">
-                <form onsubmit='NOVA.startNova()' id="input_form">
-                    <input type="text" placeholder="Personnummer" id="userId">
-                    <select id="periodList">
-                        <option value="Ht">Höstterminen</option>
-                        <option value="Vt">Vårterminen</option>  
-                    </select>
-                    <input type="button" id="submitBtn" value="Generera sig!">
-                </form>
+		<main>
+            <div class="carry">
+                <div class="center-container">
+                    <form class="center-child" onsubmit='NOVA.startNova()' id="NOVA-input-form">
+                        <input type="text" placeholder="Personnummer" id="NOVA-user-id">
+                        <select id="NOVA-period-list">
+                            <option value="Ht">Höstterminen</option>
+                            <option value="Vt">Vårterminen</option>  
+                        </select>
+                        <input type="button" id="NOVA-submit-btn" value="Generera sig!">
+                    </form>
+                </div>
             </div>
         
-			<div id="pdfContainer" class = "pdf-content">
-			</div>
-		</section>
-		<section id="showcaseSection">
+			<div class="center" id="pdfContainer"></div>
+		</main>
+		<section id="faq">
             <h2>
                 FAQ:
             </h2>
@@ -55,8 +56,10 @@
                 Vi tycker att vår kod är så bra och godhjärtad att vi vill skryta om den för hela världen. Därför finns allt publicerat på github. 
             </p>
 		</section>
-        <footer id="staticSkript">
-            Skript som sidan använder sig av:<br />
+        <footer>
+            <p>
+                Skript som sidan använder sig av:
+            </p>
             <ul>
                 <li><i><a href="https://mozilla.github.io/pdf.js/">PDF.js</a></i> utvecklad av Mozilla</li>
                 <li><i><a href="https://github.com/mozilla/pdf.js/wiki/Minimal-example-that-showcases-PDF-rendering-with-text-selection-enabled">textlayerbuilder.js och minimal.js</a></i> utvecklad pdf.js kontribuerare.</li>
@@ -72,7 +75,7 @@
 		<script src="js/demo.js" type="text/javascript"></script>
 		
         <script type="text/javascript">
-			addForkMe = function(color,pos,size,parent){
+			addForkMe = function(color,pos,size,parent,usrStyle){
                 var gitForkMeMedia = {baseUri:'https://s3.amazonaws.com/github/ribbons/forkme_',
                                       pos:{right:'right_',left:'left_'},
                                       color:{white:'white_ffffff.png',
@@ -129,12 +132,14 @@
 				
 				for(style in styles)
 					gitA.style[style] = styles[style];
-				
+				for(style in usrStyle)
+					gitA.style[style] = usrStyle[style];
+                
 				gitA.style[pos] = '0%'
 				parent.appendChild(gitA);
 			};
-            //Add 'fork me' button top right. 
-			addForkMe('random','right');
+            //Add 'fork me' button top right.
+			addForkMe('random','right', 'default', document.querySelector('header'), {'margin-top': '-100px'});
 		</script>
 	</body>
 </html>
