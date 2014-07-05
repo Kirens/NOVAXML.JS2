@@ -1,0 +1,105 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+@font-face {
+	font-family: 'Conv_Langdon';
+	src: url('Langdon.ttf');
+}
+@font-face {
+	font-family: 'Conv_Roboto';
+	src: url('roboto/Roboto-Medium.ttf');
+}
+body, html {
+	background-color: #dff2f2;  
+	height: 100%;
+}
+body {
+	min-height: 100%;  
+	min-width: 960px;
+}
+header {
+	text-align: center;
+	background-color: #dff2f2;
+	height: 250px;
+	/*color: #303030;*/
+	color: #3f4553;
+	padding-left: 100px;
+	padding-top: 100px;
+	padding-right: 100px;
+}
+h1 {
+	font-family:'Conv_Langdon',Sans-Serif;
+	text-shadow: 0px 1px 1px #303030; 
+	font-size: 100px;
+}
+h2 {
+	font-family:'Conv_Langdon',Sans-Serif;
+	text-shadow: 0px 1px 1px #303030; 
+	font-size: 50px;
+}
+header > span {
+	text-shadow: 0px 2px 1px #e7f2f2;
+}
+#controls {
+	padding-top: 20px;   
+}
+#controls > input {
+}
+#pdfContainer {
+	/*visibility:hidden;*/
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 100px;
+	overflow: hidden;
+	height: 100%;
+}
+#textLayer{
+	/*display: none;*//*Not displayed will not get boundingBox*/
+}
+footer {
+	background-color: #303030;   
+	color: #dbdbdb;
+	padding: 10px;
+	padding-left: 10%;
+	padding-right: 10%;
+	clear: both;
+}
+#firstSection {
+	height: 95%;
+    min-height: 560px;
+	overflow:hidden;
+}
+#showcaseSection {
+	min-height: 100%;
+	background-color: #dfe8f2;
+	padding-left: 10%;
+	padding-right: 10%;
+	float: left;
+	padding-bottom: 50px;
+	box-shadow: inset 0px 0px 5px #303030;
+}
+#showcaseSection > div {
+	width: 50%;
+	float: left;
+}
+h2{
+	padding-top: 20px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+h3 {
+	padding-top: 10px;   
+}
+#staticSkript {
+	color:#dfe8f2;
+}
+a {
+	color:green;
+}
+a:hover {
+	text-decoration:none;
+}
+/*a:visited {
+	color:white;
+}*/
