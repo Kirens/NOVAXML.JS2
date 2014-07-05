@@ -24,18 +24,7 @@ window.onload = function() {
 
             container.appendChild(canvas);
 
-            var textLayerDiv = document.createElement("div");
-            container.appendChild(textLayerDiv);
-
             page.getTextContent().then(function(textContent) {
-                var textLayer = new TextLayerBuilder({
-                    textLayerDiv: textLayerDiv,
-                    viewport: viewport,
-                    pageIndex: 0
-                });
-                
-                //Enable this line to render divs contiaining the content of the pdf. 
-                //textLayer.setTextContent(textContent); 
                 
                 var renderContext = {
                     canvasContext: context,

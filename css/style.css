@@ -2,6 +2,9 @@
 	margin: 0;
 	padding: 0;
 }
+body {
+    font-family: arial, verdana, sans-serif;
+}
 @font-face {
 	font-family: 'Conv_Langdon';
 	src: url('Langdon.ttf');
