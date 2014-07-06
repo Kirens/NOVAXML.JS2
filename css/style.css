@@ -1,3 +1,4 @@
+/*<<<<<<< HEAD
 * {
 	margin: 0;
 	padding: 0;
@@ -17,85 +18,87 @@ body, html {
 	background-color: #dff2f2;  
 	height: 100%;
 }
+=======*/
+/*This needs to be revised*/
+/*>>>>>>> 0ad5f121da285bc9fdad96616ce5237a8f8c5aaa*/
 body {
-	min-height: 100%;  
-	min-width: 960px;
+    margin: 0px;
+	background-color: #dff2f2;
+    /*background-color: #eff;*/
+    min-width: 1295px;
+    font-family: arial, verdana, sans-serif
 }
 header {
-	text-align: center;
-	background-color: #dff2f2;
-	height: 250px;
-	/*color: #303030;*/
-	color: #3f4553;
-	padding-left: 100px;
-	padding-top: 100px;
-	padding-right: 100px;
+    position:relative;
+    text-align: center;
 }
-h1 {
-	font-family:'Conv_Langdon',Sans-Serif;
+header h1 {
+    font-family:'Conv_Langdon',Sans-Serif;
 	text-shadow: 0px 1px 1px #303030; 
+    color: #3f4553;
 	font-size: 100px;
+    margin: 0;
+	margin-top: 1em;
 }
-h2 {
-	font-family:'Conv_Langdon',Sans-Serif;
-	text-shadow: 0px 1px 1px #303030; 
-	font-size: 50px;
+header p {
+    margin-top:0;
 }
-header > span {
-	text-shadow: 0px 2px 1px #e7f2f2;
+main {
+    height: 30em;
+    overflow: hidden;
 }
-#controls {
-	padding-top: 20px;   
+main .carry {
+    display: flex;
+    margin-bottom: 1em;
+    position: relative;
 }
-#controls > input {
+main .center-container {
+    float: left;
+    position: relative;
+    left: 50%;
 }
-#pdfContainer {
-	/*visibility:hidden;*/
-	margin-left: auto;
-	margin-right: auto;
-	padding-bottom: 100px;
-	overflow: hidden;
-	height: 100%;
+main .center-child {
+    float: left;
+    position: relative;
+    left: -50%;
 }
-#textLayer{
-	/*display: none;*//*Not displayed will not get boundingBox*/
+main .center {
+    position: relative;
+    text-align: center;
+    margin:auto;
 }
+
+
+#faq{
+    min-height: 100%;
+    background-color: #dfe8f2;
+    padding-left: 20%;
+    padding-right: 20%;
+    float: left;
+    padding-bottom: 50px;
+    box-shadow: inset 0px 3px 6px -3px rgba(0, 0, 0, 0.4), 0px 10px 10px -5px rgba(0, 0, 0, 0.4);
+    
+}
+#faq h2 {
+    font-family:'Conv_Langdon',Sans-Serif;
+    text-shadow: 0px 1px 1px #303030; 
+    font-size: 50px;
+}
+#faq h3 {
+    padding-top: 10px;
+    max-width: 70%;
+}
+#faq p {
+    max-width: 70%;
+}
+
 footer {
-	background-color: #303030;   
-	color: #dbdbdb;
-	padding: 10px;
-	padding-left: 10%;
-	padding-right: 10%;
-	clear: both;
-}
-#firstSection {
-	height: 95%;
-    min-height: 560px;
-	overflow:hidden;
-}
-#showcaseSection {
-	min-height: 100%;
-	background-color: #dfe8f2;
-	padding-left: 10%;
-	padding-right: 10%;
-	float: left;
-	padding-bottom: 50px;
-	box-shadow: inset 0px 0px 5px #303030;
-}
-#showcaseSection > div {
-	width: 50%;
-	float: left;
-}
-h2{
-	padding-top: 20px;
-	padding-bottom: 0px;
-	margin-bottom: 0px;
-}
-h3 {
-	padding-top: 10px;   
-}
-#staticSkript {
-	color:#dfe8f2;
+    background-color: #303030;   
+    color: #dbdbdb;
+    padding: 10px;
+    padding-left: 20%;
+    padding-right: 20%;
+    clear: both;
 }
 a {
 	color:green;
@@ -103,6 +106,3 @@ a {
 a:hover {
 	text-decoration:none;
 }
-/*a:visited {
-	color:white;
-}*/
