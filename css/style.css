@@ -1,85 +1,173 @@
-body {
-    margin: 0px;
-	background-color: #dff2f2;
-    /*background-color: #eff;*/
-    min-width: 1295px;
-    font-family: arial, verdana, sans-serif
-}
-header {
-    position:relative;
-    text-align: center;
-}
-header h1 {
-    font-family:'Conv_Langdon',Sans-Serif;
-	text-shadow: 0px 1px 1px #303030; 
-    color: #3f4553;
-	font-size: 100px;
-    margin: 0;
-	margin-top: 1em;
-}
-header p {
-    margin-top:0;
-}
-main {
-    height: 30em;
-    overflow: hidden;
-}
-main .carry {
-    display: flex;
-    margin-bottom: 1em;
-    position: relative;
-}
-main .center-container {
-    float: left;
-    position: relative;
-    left: 50%;
-}
-main .center-child {
-    float: left;
-    position: relative;
-    left: -50%;
-}
-main .center {
-    position: relative;
-    text-align: center;
-    margin:auto;
-}
+/*This needs to be revised*/
+@media all{
+    #ForkUsOnGit{
+        position: fixed;
+        z-index: 100;
+        top: 0%;
+        width: 100px;
+        height: 100px;
+        right: 0%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 
+    canvas {
+        /*display: none;*/
+    }
 
-#faq{
-    min-height: 100%;
-    background-color: #dfe8f2;
-    padding-left: 20%;
-    padding-right: 20%;
-    float: left;
-    padding-bottom: 50px;
-    box-shadow: inset 0px 3px 6px -3px rgba(0, 0, 0, 0.4), 0px 10px 10px -5px rgba(0, 0, 0, 0.4);
+    body {
+        margin: 0px;
+        background-color: #dff2f2;
+        /*background-color: #eff;*/
+        font-family: arial, verdana, sans-serif;
+        word-wrap: break-word;
+    }
+    header {
+        position:relative;
+        text-align: center;
+        margin: 10px;
+    }
+    header h1 {
+        font-family:'Conv_Langdon',Sans-Serif;
+        text-shadow: 0px 1px 1px #303030; 
+        color: #3f4553;
+        margin: 0;
+        margin-top: 1em;
+        font-size: 6em;
+    }
+    header p {
+        margin-top:0;
+    }
+    main {
+        height: 30em;
+        overflow: hidden;
+    }
+    main .carry {
+        display: flex;
+        margin-bottom: 1em;
+        position: relative;
+    }
+    main .center-container {
+        float: left;
+        position: relative;
+        left: 50%;
+    }
+    main .center-child {
+        float: left;
+        position: relative;
+        left: -50%;
+    }
     
-}
-#faq h2 {
-    font-family:'Conv_Langdon',Sans-Serif;
-    text-shadow: 0px 1px 1px #303030; 
-    font-size: 50px;
-}
-#faq h3 {
-    padding-top: 10px;
-    max-width: 70%;
-}
-#faq p {
-    max-width: 70%;
+    .progress-tile{
+        
+    }
+
+    .center {
+        position: relative;
+        margin:auto;
+        padding: 0px 10px;
+    }
+
+    #faq{
+        width: 100%;
+        background-color: #dfe8f2;
+        /*padding-left: 20%;
+        padding-right: 20%;*/
+        float: left;
+        padding-bottom: 50px;
+        box-shadow: inset 0px 3px 6px -3px rgba(0, 0, 0, 0.4), 0px 10px 10px -5px rgba(0, 0, 0, 0.4);
+    }
+    #faq .center {
+        max-width: 43em;
+    }
+
+    #faq h2 {
+        font-family:'Conv_Langdon',Sans-Serif;
+        text-shadow: 0px 1px 1px #303030; 
+        font-size: 50px;
+    }
+    #faq h3 {
+        padding-top: 10px;
+        /*max-width: 70%;*/
+    }
+    #faq p {
+        /*max-width: 70%;*/
+    }
+
+    footer {
+        background-color: #303030;   
+        color: #dbdbdb;
+        padding: 10px;
+        clear: both;
+    }
+
+    footer li {
+        text-indent: -1em;
+        padding-left: 1em;
+    }
+
+    footer .center {
+        /*min-width: 31em;*/
+        max-width: 62em;
+    }
+
+    a {
+        color:green;
+    }
+    a:hover {
+        text-decoration:none;
+    }
 }
 
-footer {
-    background-color: #303030;   
-    color: #dbdbdb;
-    padding: 10px;
-    padding-left: 20%;
-    padding-right: 20%;
-    clear: both;
+@media screen {
+    #printContainer{
+        display: none;
+    }
 }
-a {
-	color:green;
+
+@media (min-width: 512px){
+    #ForkUsOnGit{
+        margin-top: -100px;
+        margin-right: -10px;
+        position: absolute;
+        width: 149px;
+        height: 149px;
+    }
 }
-a:hover {
-	text-decoration:none;
+
+@media (max-width: 512px){
+    body {
+        margin: 0px;
+        background-color: #dff2f2;
+        /*background-color: #eff;*/
+        max-width: 100%;
+        font-family: arial, verdana, sans-serif
+    }
+    header{
+        margin-top: 50px;
+    }
+    header h1 {
+        font-size: 4em;
+    }
+    .center{
+        padding: 0px 10px;
+    }
+}
+
+@media print {
+    body {
+      color: #000;
+      background: #fff;
+   }
+    header h1{
+        margin-top: 0px;
+    }
+    main{
+        display: none;
+    }
+    #ForkUsOnGit{
+        display: none;
+    }
+    
+    /* design tables/schedules using the 'page-break-after' property*/
 }
